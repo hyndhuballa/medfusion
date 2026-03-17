@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #0a0d12;
+  --bg-panel: #0f1318;
+  --bg-surface: #141820;
+  --bg-elevated: #1a1f28;
+  --bg-hover: #1e2430;
+  --border: #1e2635;
+  --border-mid: #263040;
+  --border-hi: #2e3a4a;
+  --text-primary: #d4dbe8;
+  --text-secondary: #7a8a9e;
+  --text-muted: #4a5568;
+  --text-dim: #2d3748;
+  --accent-red: #e03c3c;
+  --accent-amber: #d4833a;
+  --accent-green: #2e7d52;
+  --accent-blue: #2a5fa5;
+  --accent-teal: #1e6b6b;
+  --signal-red: #e05555;
+  --signal-amber: #d4a23a;
+  --signal-green: #3aaa6b;
+  --signal-blue: #4a8fd4;
+}
+
+html,
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-mid) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-mid);
+  border-radius: 1px;
+}
+
+/* Live badge blink animation */
+@keyframes blink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.4; }
+}
+
+/* Pulse for dots */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Tabular numbers for mono data */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(42, 95, 165, 0.35);
+  color: var(--text-primary);
+}
